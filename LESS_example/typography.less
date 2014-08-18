@@ -1,0 +1,359 @@
+/*
+///////////////////////
+TYPOGRAPHY
+///////////////////////
+*/
+
+
+#ebook{
+    float: left;
+    margin-left: -10px;
+    margin-top: 2px;
+    background: white;
+    position: relative;
+    /*width: 300px;*/
+    width: 18.75em;
+    height: 50px;
+    z-index: 10;
+    border-radius: 5px;
+}
+
+#buyBook{
+    position: relative;
+    z-index: 11;
+}
+
+#ebook a{
+    padding-top: 3px;
+    padding-left: 35px;
+    display: block;
+    height: 25px;
+    position: absolute;
+    top: -5px;
+    left: 65px;
+}
+
+.italic{
+    font-style: italic;
+}
+.underline{
+    text-decoration: underline;
+}
+
+hgroup h2, hgroup h3{
+    font-size: 1.20em;
+    margin-top: 4px;
+}
+small{
+    text-transform: uppercase;
+    font-size: 0.75em;
+    font-family: 'Roboto Condensed', sans-serif;
+    /*color: #9b0000;*/
+    color: rgba(0, 110, 0, 1);
+}
+p{
+    font-size: 1em;
+    line-height: 1.5em;
+    font-weight: normal;
+}
+a{
+    color: #9b0000;
+    transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+}
+a:hover{
+    text-decoration: none;
+}
+p.smaller{
+    font-size: 10px;
+}
+.small{
+    font-size: 0.875em;
+}
+.large{
+    font-size: 1.125em;
+    line-height: 1.5em;
+}
+.larger{ 
+    font-size: 1.5em;
+    line-height: 28px;
+}
+.largest{
+    font-size: 2em;
+    line-height: 28px;
+}
+h3{
+    font-size: 1.5em;
+    line-height: 1.25em;
+    font-family: 'Domine', 'Georgia', serif;
+    color: #9b0000;
+}
+.huge{
+    font-size: 3em;
+    @media only screen and (max-width: 21.875em) {
+        font-size: 2em!important;
+    }
+}
+.p-heading{
+    font-size: 2.5em;
+    line-height: 1em;
+    text-shadow: 1px 1px 1px #000;
+}
+.page-heading{
+    text-shadow: 1px 1px 1px #fff, 1px 1px 1px #000;
+    font-size: 2em;
+    margin: 2em 0 1em 0;
+}
+.red{
+    color: #9b0000;
+}
+.green{
+    color: rgba(0, 110, 0, 1);
+}
+.domine{
+    font-family: 'Domine', 'Georgia', serif;
+}
+ul li a{
+    font-family: 'Roboto Condensed', 'sans-serif';
+}
+.roboto{
+    font-family: 'Roboto Condensed', 'Georgia', serif;
+}
+.brand{
+    text-align: center;    
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.brand h1{
+    font-family: 'Roboto Condensed', sans-serif;
+    text-shadow: 2px 2px 2px #fff, 2px 2px 2px #000;
+    text-align: center;
+    font-size: 4em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.brand a{
+    color: rgba(0, 110, 0, 1);
+    text-decoration: none;
+}
+.brand h1:hover a{
+    color: #9b0000;
+}
+.brand h2{
+    margin-top: 5px;
+}
+.uppercase{
+    text-transform: uppercase;
+}
+#logo{
+    margin-top: 20px;
+}
+.down1x{
+    margin-top: 1em;
+}
+.down3x{
+    margin-top: 3em;
+}
+.down7x{
+    margin-top: 7em;
+}
+.down1-5x{
+    margin-top: 1.5em;
+}
+.down2x{
+    margin-top: 2em;
+}
+.down3x{
+    margin-top: 3em;
+}
+.text-right{
+    text-align: right;
+}
+
+.inline-quote{
+    background-color: #efefef;
+    padding: 5px;
+}
+
+.call-out{
+    background-color: #efefef;
+    padding: 5px;
+}
+
+li.p-list{
+}
+
+ul li.p-list{
+    margin-bottom: 10px;
+    list-style: disc;
+    @media only screen and (max-width: 23.9375em){
+        margin-left: -5px!important;
+    }
+}
+ol li.p-list{
+    margin-bottom: 10px;
+    list-style: decimal;
+    @media only screen and (max-width: 23.9375em){
+        margin-left: -5px!important;
+    }
+}
+
+.excerpt-link{
+    width: 50%;
+    margin: 0 auto 2px auto;
+    display: block;
+    background: #9b0000;
+    color: white;
+    font-size: 24px;
+    padding: 8px 5px;
+    text-shadow: 0 2px 0 black;
+    border-top: 1px solid #d16666;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-decoration: none;
+    box-shadow: 0px 4px 0px 0px #650a0a;
+    border-radius: 5px;
+}
+.excerpt-link:hover{
+    background: #b70000;
+    margin-bottom: 0;
+    box-shadow:    0px 2px 0px 0px #650a0a;
+}
+
+blockquote{
+    float: right;
+    border-top: 1px dotted #006e00;
+    border-bottom: 1px dotted #006e00;
+    font-size: 1.875em;
+    font-family: 'Roboto Condensed', sans-serif;
+    width: 45%;
+    color: #9b0000;
+    font-style: italic;
+    margin: 0.75em;
+    padding: 5px 0;
+}
+
+.style-guide{
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+
+
+.book{
+    color: #9b0000;
+}.book:hover{
+    text-decoration: none;
+}
+.book a{
+    display: block;
+    text-align: right;
+}
+
+.facebook{
+    background: url(../img/f_logo.png) 0 5px no-repeat;
+    padding-left: 40px;
+    display: block;
+}
+.linkedin{
+    background: url(../img/linkedin_logo.png) 0 5px no-repeat;
+    /*  The designer of the above icon is http://www.Quake9.com  */
+    padding-left: 40px;
+    display: block;
+}
+
+ul.bulleted-list li{
+    list-style: disc;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+ol.bulleted-list li{
+    list-style: decimal;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.tight{
+    margin-bottom: 2px;
+    & + ul, & + ol{
+        margin-top: 0;
+    }
+}
+.big{
+    font-size: 24px;
+}
+.huge{
+    font-size: 3em;
+    line-height: 1em;
+}
+.page{
+    width: 80%;
+    margin: 0 auto;
+    /*overflow: hidden;*/
+    background: url(../img/subtle_grunge.png) 0 0 repeat;
+}
+
+.text-shadow{
+    text-shadow: 0px 1px 0px #cccccc;
+}
+.text-center{
+    text-align: center;
+}
+
+
+.icon-book{
+    display: block;
+    position: absolute;
+    color: #006e00;
+    font-size: 2em;
+    left: 1.5em;
+    top: 9px;
+    @media only screen and (max-width: 35em){
+        left: 1em;
+    }
+}
+.icon-book2{
+    font-size: 1.5em;
+    // position: absolute;
+    // margin-left: -1.25em;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src:url('../fonts/icomoon.eot');
+    src:url('../fonts/icomoon.eot') format('embedded-opentype'),
+        url('../fonts/icomoon.woff') format('woff'),
+        url('../fonts/icomoon.ttf') format('truetype'),
+        url('../fonts/icomoon.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-book:before {
+    content: "\e600";
+}
+.icon-book2:before {
+    content: "\e601";
+}
+
+

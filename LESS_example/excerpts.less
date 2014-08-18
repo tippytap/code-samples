@@ -1,0 +1,41 @@
+/*///////////////// 
+EXCERPTS
+/////////////////*/
+#excerpts > div{
+    display: none;
+    position: relative;
+}
+#excerpts div.selected{
+    /*display: block;*/
+}
+#excerpts .exit{
+    color: #006e00;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1em;
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+}
+#excerpts .exit:hover{
+    background: #006e00;
+    color: white;
+    margin-top: -2px;
+}
+
+.commentary h3{
+    cursor: pointer;
+}
+.commentary div ~ div{
+    overflow: hidden;
+    height: 0;
+}
+.commentary.active div ~ div{
+    overflow: hidden;
+    height: auto;
+}

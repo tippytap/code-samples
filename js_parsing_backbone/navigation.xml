@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<navigation>
+	<menu>
+		<item id="creativity_right"><![CDATA[The Right to be Creative]]></item>
+
+		<item id="creativity_conscious"><![CDATA[Global Creativity-Consciousness]]></item>
+
+		<item id="creativity_networking"><![CDATA[Networking Forums]]></item>
+
+		<item id="creativity_vision"><![CDATA[Mission and Vision]]></item>
+		
+		<item id="creativity_anecdotes"><![CDATA[Why We Formed]]></item>
+	</menu>
+	
+	<descriptions>
+		<item className="creativity_right">
+			<title><![CDATA[The Right to be Creative]]></title>
+			<link><![CDATA[right-to-be-creative.html]]></link>
+			<paragraph><![CDATA[We talk so much about fundamental human rights: life, liberty, security, education, work, property, protection of the law, and many more. We, justifiably, regard these rights as inalienable, and take great care to protect them. Diplomatic relations frequently reflect the extent to which countries perceive each other as observing these rights. Many civil and international wars have been fought when it was deemed that certain fundamental human rights were seriously violated.]]></paragraph>
+		</item>
+		<item className="creativity_conscious">
+			<title><![CDATA[Global Creativity-Consciousness]]></title>
+			<link><![CDATA[global-creativity-consciousness.html]]></link>
+			<paragraph><![CDATA[
+            The <a href="https://www.facebook.com/photo.php?fbid=637722452963592&set=a.365261483543025.81200.364981593571014&type=1&theater">evidence</a> conclusively demonstrates our authentic, quintessentially creative, nature as humans. This is the fact that every human being is endowed with one-of-a-kind set of abilities which he or she necessarily must be able to develop and engage in significant and beneficial actions in order to be truly happy and fulfilled. ]]></paragraph>
+		</item>
+		<item className="creativity_vision">
+			<title><![CDATA[Mission and Vision]]></title>
+			<link><![CDATA[vision.html]]></link>
+			<paragraph><![CDATA[
+            The vision of the Global Creativity Network is a potential-actualizing, humanly-fulfilling global civilization that is built on the creative contributions of all people.]]></paragraph>
+		</item>
+		<item className="creativity_networking">
+			<title><![CDATA[Networking Forums]]></title>
+			<link><![CDATA[networking.html]]></link>
+			<paragraph><![CDATA[
+            Under contrstruction]]></paragraph>
+		</item>
+		<item className="creativity_anecdotes">
+			<title><![CDATA[Why We Formed]]></title>
+			<link><![CDATA[why-we-formed.html]]></link>
+			<paragraph><![CDATA[
+            Global Creativity Network has been prompted by two contrasting global prospects, both of which are equally possible and equally likely.]]></paragraph>
+		</item>
+	</descriptions>
+</navigation>
+

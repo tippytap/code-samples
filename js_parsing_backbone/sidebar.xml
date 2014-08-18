@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<sidebar>
+
+	<module>
+		<header><![CDATA[Philosophy]]></header>
+		<content><![CDATA[<em>That we might exist more fully as humans – each developing and contributing more of his or her special abilities for the greater good.</em>]]></content>
+	</module>
+	<module>
+		<header><![CDATA[Blog]]></header>
+		<content><![CDATA[<a target="_blank" class="social wordpress" href="http://globalcreativitynewsletter.wordpress.com/">Keep up with our blog for more news and insights.</a>]]></content>
+	</module>
+	<module>
+		<header><![CDATA[Twitter]]></header>
+		<content><![CDATA[<a target="_blank" class="social twitter" href="https://twitter.com/MassCreativity">Follow MassCreativity on Twitter</a>]]></content>
+	</module>
+	<module>
+		<header><![CDATA[Facebook]]></header>
+		<content><![CDATA[<a target="_blank" class="social facebook" href="https://www.facebook.com/GlobalCreativityNetwork">Connect to Global Creativity Network on Facebook.</a>]]></content>
+	</module>
+	<module>
+		<header><![CDATA[Linked In]]></header>
+		<content><![CDATA[<a target="_blank" class="social linkedin" href="http://www.linkedin.com/in/efiongetuk">Connect to Global Creativity Network on LinkedIn&trade;.</a>]]></content>
+	</module>
+	<module list="true">
+		<header><![CDATA[Suggested Reading]]></header>
+		<content><![CDATA[<a target="_blank" href="https://www.facebook.com/GlobalCreativityNetwork">Creativity: Revealing the Truth about human Nature</a>]]></content>
+		<content><![CDATA[<a target="_blank" href="http://www.amazon.com/dp/B007KQS82Y">Great Insights on Human Creativity</a>]]></content>
+	</module>
+	<module>
+		<header><![CDATA[Contact Global Creativity Network]]></header>
+		<content><![CDATA[Email us at <a href="mailto:globalcreativitynetwork@gmail.com">globalcreativitynetwork@gmail.com</a>]]></content>
+	</module>
+
+</sidebar>
+

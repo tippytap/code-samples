@@ -34,8 +34,63 @@ window.controller = window.controller || {};
 		ns.parseMenu(xml);
 
 		ns.parseDescription(xml);
-		// console.log('starting parse');
 
+		ns.parseSidebarData(xml);
+
+	};
+
+	// parses sidebar data and stores it
+	ns.parseSidebarData = function(xml){
+		var sidebarXML = xml.firstChild;
+		var $sidebar = $(sidebarXML);
+		var modules = $sidebar.children('module');
+
+		ns.modulesArray = [];
+
+		$(modules).each(function(){
+			var modulesObject = {};
+			var modulesXML = $(this)[0];
+			modulesObject.header = $(modulesXML).children('header').text();
+			modulesObject.contents = $(modulesXML).children('content').text();
+			ns.modulesArray.push(modulesObject);
+		});
+
+		ns.createSidebar(ns.modulesArray);
+	};
+
+
+	// model and view for sidebar items
+	ns.SidebarModel = Backbone.Model.extend({
+		defaults:{}
+	});
+	ns.SidebarView = Backbone.View.extend({
+
+		initialize: function(){},
+
+		render: function(){
+			var template = $("#sidbar_modules").html();
+
+			var html = _.template(template, this.model.get('data'));
+
+			this.$el.html(html);
+
+			return this.$el;
+		}
+
+	});
+
+	// builds sidebar in the dom
+	ns.createSidebar = function(data){
+		for(var i = 0; i < data.length; i++){
+			module = data[i];
+			var sidebarModel = new ns.SidebarModel({
+				'data': module
+			});
+			var sidebarView = new ns.SidebarView({
+				model: sidebarModel
+			});
+			$('#sidebar').append(sidebarView.render());
+		}
 	};
 
 	// Grab data to build the navigation menu with
@@ -134,6 +189,8 @@ window.controller = window.controller || {};
 		$(item).each(function(){
 			var descriptionItem = {};
 			var descriptionXML = $(this)[0];
+			descriptionItem.readMore = ns.stringToBoolean($(descriptionXML).attr('readMore'));
+			descriptionItem.titleCentered = ns.stringToBoolean($(descriptionXML).find("title").attr('centered'));
 			descriptionItem.className = $(descriptionXML).attr('className');
 			descriptionItem.title = $(descriptionXML).children('title').text();
 			descriptionItem.link = $(descriptionXML).children('link').text();
@@ -141,6 +198,17 @@ window.controller = window.controller || {};
 			ns.descriptionsArray.push(descriptionItem);
 		});
 		ns.createDescriptions(ns.descriptionsArray);
+	};
+
+	// this is a unit that returns boolean true or false
+	ns.stringToBoolean = function(string){
+		var val = "";
+		if(string == "true"){
+			val = (string === "true");
+		}else{
+			val = (string === "false");
+		}
+		return val;
 	};
 
 	// Define description model and view
@@ -153,18 +221,39 @@ window.controller = window.controller || {};
 		events: {},
 
 		initialize: function(){
-			// sets event listener on custom event 'revealSelection'
 			this.listenTo(ns.event_bus, 'revealSelection', this.expandView);
 		},
 
 		render: function(){
-			var template = $('#navDescription').html();
+			var description = $('#navDescription').html();
+			var readMore = this.evalReadMore(this.model.get('descriptionItem'));
+			var template = description + readMore;
 			var html = _.template(template, this.model.get('descriptionItem'));
 			this.$el.html(html);
 			return this.$el;
 		},
 
-		// listens to event_bus and responds to 'revealSelection' custom event
+		evalDescriptionTemplate: function(){
+			var model = this.model.get('descriptionItem');
+			var readMore = model.readMore;
+			var titleCentered = model.titleCentered;
+			console.log(titleCentered);
+			if(readMore != true){
+				this.$el.children('div:first').removeClass('col-2-3');
+			}
+			if(titleCentered == true){
+				this.$el.find('h3').addClass('text-center');
+			}
+		},
+
+		evalReadMore: function(model){
+			if(model.readMore == true){
+				return $('#readMore').html();
+			}else{
+				return "";
+			}
+		},
+
 		expandView: function(event){
 	    	this.$el.each(function(){
 	    		var excerptClass = $(this).children('div:first').attr('class').split("_", 2);
@@ -189,7 +278,6 @@ window.controller = window.controller || {};
 	ns.createDescriptions = function(data){
 		for (var i = 0; i < data.length; i++){
 			var descriptionItem = data[i];
-			// console.log(descriptionItem);
 			var descriptionItemModel = new ns.DescriptionsModel({
 				'descriptionItem': descriptionItem
 			});
@@ -197,8 +285,9 @@ window.controller = window.controller || {};
 				model: descriptionItemModel
 			});
 			$('#excerpts').append(descriptionItemView.render());
+			descriptionItemView.evalDescriptionTemplate();
 		};
-		$('.exit').each(function(){
+		$('#excerpts').children('.widget').find('.exit').each(function(){
 			$(this).on('click', ns.closeSection);
 		});
 	};
@@ -208,5 +297,13 @@ window.controller = window.controller || {};
 		var excerpts = $('#excerpts');
 		excerpts.find('.selected').removeClass('selected').slideUp();
 	};
+	// closes news section
+	ns.closeNews = function(){
+		var $news = $('#news');
+		var exit = $news.children('.exit');
+		$(exit).on('click', function(){
+			$news.slideUp();
+		});
+	}
 
 })(window.controller);
